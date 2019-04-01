@@ -1,0 +1,40 @@
+.full-width-table {
+  width: 80%;
+  margin:10px auto;
+}
+.gray{
+  font-weight:400;
+}
+.row-style-font{
+  font-size:15px;
+  font-weight:400;
+}
+.row-ontime{
+  color:green;
+  font-size: 15px;
+  font-weight:400;
+}
+.row-late{
+  color:blue;
+  font-size: 15px;
+  font-weight:400;
+}
+.row-early{
+  color:red;
+  font-size: 15px;
+  font-weight:400;
+}
+.row-unknown{
+  color:brown;
+  font-size: 15px;
+  font-weight:400;
+}
+.header-style{
+  font-weight: bold;
+  font-size: 15px;
+  color: rgba(0,0,0,0.87);
+  background-color: rgb(224,243,243);
+}
+.row-style-bold{
+  font-weight:bold;
+}

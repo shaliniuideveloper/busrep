@@ -1,0 +1,41 @@
+
+<div class="container" *ngIf="collapsibleData.data"> 
+  <h3 class="heading">Bus Reports</h3>
+<collapsible-list [type]="'accordion'" *ngFor="let collapsible of collapsibleData.data">
+  
+  <collapsible-list-item>
+    <collapsible-header class="waves-effect list-header">
+      
+     {{collapsible.organisation}}-{{collapsible.date}} 
+    </collapsible-header>
+    <collapsible-body [expanded]="false">
+      <div class="row col-xs-12 col-md-6">
+          <app-data-table [data]="collapsible.busData"></app-data-table>
+      </div>
+      
+      <!--Add Textarea and Button component here-->
+      <div class="row col-xs-12 col-md-6"> 
+          
+              <textarea    
+                 placeholder="Enter comments here" 
+                 
+                 (change)="onCommentChange()">
+              </textarea>
+                
+           
+      </div>
+      
+      <div class="row">
+          <button class="btn btn-secondary" (click)="saveNotes()">Save notes</button>
+      </div>
+      
+    </collapsible-body>
+    
+    
+  </collapsible-list-item>
+  
+ 
+ 
+</collapsible-list>
+ 
+</div>

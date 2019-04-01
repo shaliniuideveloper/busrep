@@ -1,0 +1,33 @@
+<div class="mat-elevation-z8">
+  <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
+    <!-- BusId Column -->
+    <ng-container matColumnDef="busId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-style"> Bus ID</th>
+      <td mat-cell *matCellDef="let row" class="row-style-font">{{row.busId}}</td>
+    </ng-container>
+
+    <!-- Route Variant Column -->
+    <ng-container matColumnDef="routeVariant">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-style">Route Variant</th>
+      <td mat-cell *matCellDef="let row" ><span class="row-style-bold">{{row.routeVariant.substring(0,3)}}</span><span>{{row.routeVariant.substring(3,7)}}</span></td>
+    </ng-container>
+
+     <!-- Deviation From TimeTable Column -->
+     <ng-container matColumnDef="deviationFromTimeTable">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="header-style">Status</th>
+      <td mat-cell *matCellDef="let row" [ngClass]="[row.deviationFromTimeTable < 0 ? 'row-early' : 'row-ontime',
+      row.deviationFromTimeTable > 0  && row.deviationFromTimeTable < 200? 'row-ontime' : 'row-late',
+row.deviationFromTimeTable > 200  ? 'row-late' : 'row-ontime']">{{row.deviationFromTimeTable < 0 ? 'Early':row.deviationFromTimeTable < 200 && row.deviationFromTimeTable !=null   ? 'OnTime' :row.deviationFromTimeTable == null? 'Unknown':'Late'}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" [ngClass]="'gray'"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator
+      [length]="dataSource.data.length"
+      [pageIndex]="0"
+      [pageSize]="50"
+      [pageSizeOptions]="[25, 50, 100, 250]">
+  </mat-paginator>
+</div>

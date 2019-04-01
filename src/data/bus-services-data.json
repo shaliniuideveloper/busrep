@@ -1,0 +1,36 @@
+{
+  "data":[
+    {
+      "organisation":"Sydney Buses",
+      "date":"25/09/2015",
+      "busData":[
+        {
+          "busId":"42612",
+          "routeVariant":"891 2 1",
+          "deviationFromTimeTable":77
+        }
+      ]
+    },
+    {
+      "organisation":"Westbus",
+      "date":"25/09/2015",
+      "busData":[
+        {
+          "busId":"94811",
+          "routeVariant":"664 2 1",
+          "deviationFromTimeTable":164
+        },
+        {
+          "busId":"62788",
+          "routeVariant":"UNKNOWN",
+          "deviationFromTimeTable":null
+        },
+        {
+          "busId":"14221",
+          "routeVariant":"834 1 1",
+          "deviationFromTimeTable":423
+        }
+      ]
+    }
+  ]
+}
